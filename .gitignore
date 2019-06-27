@@ -1,0 +1,7 @@
+.DS_Store
+data/yishen
+data/ershen
+__pycache__
+.idea
+checkpoints
+tensorboard
