@@ -4,12 +4,12 @@ import logging
 import os
 import re
 import time
-
+from cnn_config import TCNNConfig
 from gensim.models import Word2Vec
 
 import jieba
 
-stoplist = {}.fromkeys([line.strip() for line in open("./data/stopwords.txt")])
+stoplist = {}.fromkeys([line.strip() for line in open("./data/stopwords.txt","rb",encoding='utf-8')])
 
 
 class Get_Sentences(object):
@@ -43,4 +43,5 @@ def train_word2vec(config):
 
 
 if __name__ == '__main__':
-    train_word2vec()
+    config = TCNNConfig('data/ershen/small', 2)
+    train_word2vec(config)
